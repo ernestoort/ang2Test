@@ -1,17 +1,12 @@
-import {NgModule} from '@angular/core';
+import {ModuleWithProviders} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
 import {StocksComponent} from './stocks.component';
 
-const routes: Routes = [
-  {path: 'stocks', component: StocksComponent},
-];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
-})
-export class StocksComponentRoutingModule {
-}
+const appRoutes: Routes = [{
+  path: 'stocks',
+  component: StocksComponent
+}];
 
-export const routedComponents = [StocksComponent];
+export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);

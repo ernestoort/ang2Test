@@ -1,8 +1,14 @@
+<ngb-alert>
+  Random message
+</ngb-alert>
+
 {{today | date: "dd/MMM/YYYY hh:mm a"}}
-<h1>
+<h1 style="color: white;" appMyHighlight="">
   {{title}}
 </h1>
 
-<p appMyHighlight="" style="color: white">
-  This is highlighted
-</p>
+
+
+<a routerLink="/stocks">Stocks</a>
+
+<router-outlet></router-outlet>

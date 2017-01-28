@@ -10,8 +10,11 @@ import {StockDirectiveDirective} from './stock-directive.directive';
 import {HiglightDirective} from './higlight.directive';
 import {StockService} from './stock.service';
 import {DateFormatterPipe} from './date-formatter.pipe';
-import {routedComponents} from './app.routing';
-
+import {routing} from './app.routing';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {DashboardComponent} from './dashboard/dashboard.component';
+import {CurrencyService} from './currency.service';
+import { BondsDirective } from './bonds.directive';
 
 @NgModule({
   declarations: [
@@ -20,15 +23,18 @@ import {routedComponents} from './app.routing';
     MutualFundsComponent,
     StockDirectiveDirective,
     HiglightDirective,
-    DateFormatterPipe
+    DateFormatterPipe,
+    DashboardComponent,
+    BondsDirective
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    routedComponents
+    routing,
+    NgbModule.forRoot()
   ],
-  providers: [StockService],
+  providers: [StockService, CurrencyService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
